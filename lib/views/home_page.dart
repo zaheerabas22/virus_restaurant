@@ -3,6 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:virus_restaurant/common/bg_container.dart';
 import 'package:virus_restaurant/common/custom_appbar.dart';
 import 'package:virus_restaurant/constants/constants.dart';
+import 'package:virus_restaurant/orders/cancelled_order.dart';
+import 'package:virus_restaurant/orders/delivered_order.dart';
+import 'package:virus_restaurant/orders/new_orders.dart';
+import 'package:virus_restaurant/orders/picked_order.dart';
+import 'package:virus_restaurant/orders/preparing_order.dart';
+import 'package:virus_restaurant/orders/ready_order.dart';
+import 'package:virus_restaurant/orders/virus_deliveries.dart';
+import 'home_tabs.dart';
 import 'home_tiles.dart';
 
 class HomePage extends StatefulWidget {
@@ -42,43 +50,27 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               SizedBox(
                 height: 10.h,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 13.0),
-                child: Container(
-                  height: 25.h,
-                  width: width,
-                  decoration: BoxDecoration(
-                    color: kOffWhite,
-                    borderRadius: BorderRadius.circular(25.r),
-                  ),
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: TabBar(
-                      controller: _tabController,
-                      indicator: BoxDecoration(
-                        color: kPrimary,
-                        borderRadius: BorderRadius.circular(25.r),
-                      ),
-                      labelColor: kOffWhite,
-                      dividerColor: Colors.transparent,
-                      unselectedLabelColor: kGrayLight,
-                      tabAlignment: TabAlignment.start,
-                      labelPadding: EdgeInsets.zero,
-                      isScrollable: true,
-                      tabs: List.generate(
-                        orderList.length,
-                        (i) {
-                          return Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
-                            child: Tab(text: orderList[i]),
-                          );
-                        },
-                      ),
-                    ),
-                  ),
-                ),
+              HomeTabs(tabController: _tabController),
+              SizedBox(
+                height: 10.h,
               ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 12.w),
+                height: hieght * 0.58,
+                color: Colors.transparent,
+                child: TabBarView(
+                  controller: _tabController,
+                  children: const [
+                    NewOrders(),
+                    PreparingOrder(),
+                    ReadyOrder(),
+                    PickedOrder(),
+                    VirusDeliveries(),
+                    DeliveredOrder(),
+                    CancelledOrder(),
+                  ],
+                ),
+              )
             ],
           ),
         ),
