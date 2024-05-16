@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1045886783511",
+    "project_id": "virus-restaurant",
+    "storage_bucket": "virus-restaurant.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045886783511:android:af00d65a72eeef15534c52",
+        "android_client_info": {
+          "package_name": "com.example.virus_restaurant"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNBPCUNAF_QXg4La78N1ujbWgjwdmAkXI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
