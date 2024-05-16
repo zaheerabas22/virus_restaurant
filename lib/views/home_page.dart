@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:virus_restaurant/common/bg_container.dart';
 import 'package:virus_restaurant/common/custom_appbar.dart';
 import 'package:virus_restaurant/constants/constants.dart';
+
+import 'home_tiles.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,17 +19,26 @@ class _HomePageState extends State<HomePage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: kPrimary,
+        backgroundColor: kSecondary,
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(85),
           child: AppBar(
             elevation: 0,
-            backgroundColor: kPrimary,
+            backgroundColor: kSecondary,
             flexibleSpace: const CustomAppBar(),
           ),
         ),
-        body: const BackGroundContainer(
-            child: Center(child: Text("This is Home"))),
+        body: BackGroundContainer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              SizedBox(
+                height: 10.h,
+              ),
+              const HomeTiles()
+            ],
+          ),
+        ),
       ),
     );
   }

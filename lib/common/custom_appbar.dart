@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:virus_restaurant/common/app_style.dart';
+import 'package:virus_restaurant/common/reuseable_text.dart';
 import 'package:virus_restaurant/constants/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -11,7 +13,6 @@ class CustomAppBar extends StatelessWidget {
     return Container(
       width: width,
       padding: EdgeInsets.fromLTRB(12.w, 10.h, 12.w, 0),
-      color: kPrimary,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -28,20 +29,16 @@ class CustomAppBar extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "Virus Foods",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    ReuseableText(
+                      text: "Virus Foods",
+                      style: appStyle(14.sp, Colors.white, FontWeight.bold),
                     ),
-                    Text(
-                      "E1 block Johar Town Lahore",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.normal,
+                    ReuseableText(
+                      text: "E1 block Johar Town Lahore",
+                      style: appStyle(
+                        10.sp,
+                        Colors.white,
+                        FontWeight.normal,
                       ),
                     ),
                   ],
@@ -50,7 +47,7 @@ class CustomAppBar extends StatelessWidget {
             ],
           ),
           SvgPicture.asset(
-            "assets/icons.open_sign.svg",
+            "assets/icons/open_sign.svg",
             height: 35.h,
             width: 35.w,
           )
