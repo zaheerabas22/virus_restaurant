@@ -65,6 +65,7 @@ List<dynamic> categories = [
         "https://d326fntlu7tb1e.cloudfront.net/uploads/08323562-a3c6-461d-95a3-b3817c99871b-more.png",
     "__v": 0
   }
+  
 ];
 
 const restaurants = [

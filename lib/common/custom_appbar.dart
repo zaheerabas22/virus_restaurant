@@ -26,7 +26,7 @@ class CustomAppBar extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(9.0),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     ReuseableText(

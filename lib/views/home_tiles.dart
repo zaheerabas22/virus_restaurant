@@ -4,6 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:virus_restaurant/common/tile.dart';
 import 'package:virus_restaurant/constants/constants.dart';
+import 'package:virus_restaurant/views/add_foods/add_foods.dart';
 import 'package:virus_restaurant/views/food.dart';
 
 class HomeTiles extends StatelessWidget {
@@ -28,14 +29,20 @@ class HomeTiles extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           HomeTile(
-            onTap: () {},
+            onTap: () {
+              Get.to(
+                () => const AddFoods(),
+                transition: Transition.fadeIn,
+                duration: const Duration(milliseconds: 500),
+              );
+            },
             text: "Add Foods",
             iconpath: "assets/icons/taco.svg",
           ),
           HomeTile(
             onTap: () {},
             text: "Wallet",
-            iconpath: "assets/icons/Wallet.svg",
+            iconpath: "assets/icons/wallet.svg",
           ),
           HomeTile(
             onTap: () {
@@ -46,7 +53,7 @@ class HomeTiles extends StatelessWidget {
               );
             },
             text: "Foods",
-            iconpath: "assets/icons/french_fries.svg",
+            iconpath: "assets/icons/food.svg",
           ),
           HomeTile(
             onTap: () {},

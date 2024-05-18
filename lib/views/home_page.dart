@@ -3,13 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:virus_restaurant/common/bg_container.dart';
 import 'package:virus_restaurant/common/custom_appbar.dart';
 import 'package:virus_restaurant/constants/constants.dart';
-import 'package:virus_restaurant/orders/cancelled_order.dart';
-import 'package:virus_restaurant/orders/delivered_order.dart';
-import 'package:virus_restaurant/orders/new_orders.dart';
-import 'package:virus_restaurant/orders/picked_order.dart';
-import 'package:virus_restaurant/orders/preparing_order.dart';
-import 'package:virus_restaurant/orders/ready_order.dart';
-import 'package:virus_restaurant/orders/virus_deliveries.dart';
+import 'package:virus_restaurant/feature/orders/cancelled_order.dart';
+import 'package:virus_restaurant/feature/orders/delivered_order.dart';
+import 'package:virus_restaurant/feature/orders/new_orders.dart';
+import 'package:virus_restaurant/feature/orders/picked_order.dart';
+import 'package:virus_restaurant/feature/orders/preparing_order.dart';
+import 'package:virus_restaurant/feature/orders/ready_order.dart';
+import 'package:virus_restaurant/feature/orders/virus_deliveries.dart';
 import 'home_tabs.dart';
 import 'home_tiles.dart';
 
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               ),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 12.w),
-                height: hieght * 0.58,
+                height: MediaQuery.of(context).size.height * 0.49,
                 color: Colors.transparent,
                 child: TabBarView(
                   controller: _tabController,
